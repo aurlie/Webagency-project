@@ -1,0 +1,826 @@
+@font-face {
+    font-family: 'robotoblack';
+    src: url('fonts/web_fonts/roboto_black/Roboto-Black-webfont.eot');
+    src: url('fonts/web_fonts/roboto_black/Roboto-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/web_fonts/roboto_black/Roboto-Black-webfont.woff2') format('woff2'),
+         url('fonts/web_fonts/roboto_black/Roboto-Black-webfont.woff') format('woff'),
+         url('fonts/web_fonts/roboto_black/Roboto-Black-webfont.ttf') format('truetype'),
+         url('fonts/web_fonts/roboto_black/Roboto-Black-webfont.svg#robotoblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('fonts/web_fonts/roboto_bold/Roboto-Bold-webfont.eot');
+    src: url('fonts/web_fonts/roboto_bold/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/web_fonts/roboto_bold/Roboto-Bold-webfont.woff2') format('woff2'),
+         url('fonts/web_fonts/roboto_bold/Roboto-Bold-webfont.woff') format('woff'),
+         url('fonts/web_fonts/roboto_bold/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('fonts/web_fonts/roboto_bold/Roboto-Bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('fonts/web_fonts/roboto_regular/Roboto-Regular-webfont.eot');
+    src: url('fonts/web_fonts/roboto_regular/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/web_fonts/roboto_regular/Roboto-Regular-webfont.woff2') format('woff2'),
+         url('fonts/web_fonts/roboto_regular/Roboto-Regular-webfont.woff') format('woff'),
+         url('fonts/web_fonts/roboto_regular/Roboto-Regular-webfont.ttf') format('truetype'),
+         url('fonts/web_fonts/roboto_regular/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotomedium';
+    src: url('fonts/web_fonts/roboto_medium/Roboto-Medium-webfont.eot');
+    src: url('fonts/web_fonts/roboto_medium/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/web_fonts/roboto_medium/Roboto-Medium-webfont.woff2') format('woff2'),
+         url('fonts/web_fonts/roboto_medium/Roboto-Medium-webfont.woff') format('woff'),
+         url('fonts/web_fonts/roboto_medium/Roboto-Medium-webfont.ttf') format('truetype'),
+         url('fonts/web_fonts/roboto_medium/Roboto-Medium-webfont.svg#robotomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, ul, figure, nav { /*pour éviter des décalages par défaut dus aux marges selon les navigateurs*/
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'robotomedium', Arial, Helvetica, sans-serif;
+}
+
+em { /*sert pour les descriptions des elements du portfolio, importantes sémantiquement*/
+  font-style: normal;
+}
+
+h2 { /*spécifié en haut car se retrouve sur toutes les sections*/
+  font-size: 2.3em;
+  font-family: 'robotobold', Arial, helvetica, sans-serif;
+}
+
+#bandeauentete
+{
+  background-color: white;
+  display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+  position:fixed;
+  height:90px;
+  top:0;
+  z-index: 3; /*pour qu'au défilement, il ne passe pas derrière la section accueil qui, sans cette propriété, passe devant car en position relative  */
+}
+
+#logo
+{
+  margin : auto;
+}
+
+nav
+{
+  font-size: 0.8em;
+  margin: auto;
+}
+
+a:hover {
+  text-decoration:none;
+}
+
+nav a:visited {
+  color: #797979;
+}
+nav a:link {
+  text-decoration:none;
+  color : #797979;
+}
+
+nav>ul>li {
+  display: inline;
+  margin: 0 1em;
+}
+
+nav>ul>li :hover {
+  border-top: #5cadd3 3px solid;
+  padding-top: 2.5em;
+}
+
+@media all and (max-width: 1000px)/*-------------propriétés mobiles de l'ent^te-------------*/
+{
+    #bandeauentete {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; /*les elements du header repassent les uns sous les autres*/
+    }
+
+    nav ul li :hover {
+      border-top: #5cadd3 3px solid;
+      padding-top: 5px; /*décalage moindre de la barre bleue indiquant la section de navigation*/
+    }
+
+    nav, #logo {
+      margin-top: auto;
+    }
+}
+
+/*section accueil*/
+
+#accueil {
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+         flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+#photofond {
+  width: 100%;
+  height: auto;
+}
+
+#photofond img {
+  margin-top: 90px;
+  width: 100%;
+  height: auto;
+}
+
+#conteneuraccueil {
+  position: absolute;
+  top: 10%;left: 0;
+  margin-top: 90px;
+  color: white;
+  font-size: 0.8em;
+  padding-left: 15%;
+  padding-top: 10%;
+  z-index: 1; /*en bas de la pile, pour que le header passe pas par dessus au scroll !*/
+  }
+
+h1 {
+  font-family: 'robotobold', Arial, Helvetica, sans-serif;
+  font-size: 2.3em;
+  margin-top: -1.3em;
+  line-height: 1em;
+  }
+
+#nomagence {
+  color: #5cadd3;
+  }
+
+#cesurebas {
+  display: none;
+}
+
+#boutoninfos a{
+  text-decoration: none;
+  color: white;
+}
+
+#boutoninfos {
+  background-color: #5cadd3;
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+  padding-top: 0.5em;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 3px 0px #4494bb;
+  box-shadow: 0px 3px 0px #4494bb;
+  width: 7em;
+  height: 2em;
+  margin-top: 1em;
+}
+
+#chevrondroite, #chevrongauche{
+  font-size: 1em;
+  position: absolute;
+  bottom: 40%;
+  background-color: rgba(0,0,0,0.2);
+  padding: 0.8em;
+  padding-top: 1.3em;
+  padding-bottom: 1.3em;
+  color: white;
+}
+
+#chevrondroite {
+  right: 0;
+  border-bottom-left-radius: 3.2em;
+  border-top-left-radius: 3.2em;
+  width: 0; /*evite une déformation du background*/
+  margin-right: 0; /*pour la différencier du côté droit*/
+}
+
+#chevrongauche {
+  left: 0;
+  border-bottom-right-radius: 3em;
+  border-top-right-radius: 3em;
+  margin-left: -0.5em;
+}
+
+#barrebleuebottom {
+  position: relative;
+  background-color: #5cadd3;
+  height: 0.35em;
+  width: 11em;
+  top: -0.66em;
+  left: 0;
+  z-index: 2;/*pour qu'il passe au dessus de conteneuraccueil mais en dessous du header*/
+}
+
+#piedaccueil {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(white, #f2f2f2);
+  background-image: -o-linear-gradient(white, #f2f2f2);
+  background-image: linear-gradient(white, #f2f2f2);
+  width: 100%;
+  height: 2.5em;
+  position: relative;
+}
+/*@media screen and (min-width:0\0) { *--règle hack qui cible ie 9,10,11 et edge--*
+  #logo
+  {
+    margin-top: 1.5em;
+  }
+
+  nav
+  {
+    margin-top: 2.5em;
+  }
+
+ #photofond img {
+   margin-top: 0;
+   position: relative;
+   top: 90px;
+ }
+ #barrebleuebottom {
+   top: -0.42em;
+ }
+}*/
+
+@media all and (min-width: 650px) and (max-width: 1000px)
+{
+  #conteneuraccueil {
+    padding-left: 10%;/*réduit ( de 15% à10%)*/
+  }
+  h1 {
+    font-size: 1.65em;/*au lieu de 2.3*/
+  }
+}
+
+@media all and (min-width: 650px) and (max-width: 870px)
+{
+  #accroche {
+    display: none;
+  }
+}
+
+@media all and (max-width: 649px)
+{
+    #conteneuraccueil {
+      position: static;/*sort du flex*/
+      margin: auto;
+      padding-top: 0;
+      padding-left: 0;
+    }
+    #cesurephoto {
+      display:none;
+    }
+
+    #cesurebas {
+      display: inline;
+    }
+
+    #accroche {
+      line-height: 3em;
+    }
+
+    #boutoninfos  {
+       margin: auto;
+     }
+     
+    #conteneuraccueil p, h1 {
+      color: black;
+      margin: auto;
+      text-align: center;
+      padding: 0.5em;
+    }
+    #deuxpoints, #chevrons, #barrebleuebottom {
+      display: none;
+    }
+}
+
+@media all and (max-width: 400px)/*propriétés petits mobiles de la section accueil*/
+{
+  #accroche {
+    display: none;
+  }
+}
+
+/*-------------------------------------------section services-----*/
+
+#services p, #puceservices {
+text-align: center;
+padding-bottom: 2em;
+margin: 0 28em;
+font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+font-size: 0.8em;
+}
+
+#services h2 {
+  text-align: center;
+}
+
+#puceservices i {
+  color: #5cadd3;
+  border: solid 0.5em white;
+  border-radius: 50%;/*bordure circulaire*/
+  position : relative;
+  top: -1em;/*un peu plus haute pour aller avec la bordure de la div puceservices*/
+}
+
+#puceservices {
+  border-top: #fafafa solid 0.2em;
+  width: 10%;
+  margin: auto;
+}
+
+#containerservices {
+display: flex; /*pour disposition du mockup et de la ul en responsive*/
+display: -webkit-box;/*préfixes vendeur*/
+display: -ms-flexbox;
+}
+
+#mockup {
+  width: 45%;
+  text-align: center;
+}
+
+#mockup img {
+  width: 100%;
+}
+
+#serviceslist {
+  width: 45%;
+}
+
+.fa-li {/*comprend les deux icones fontawesome */
+  border: solid #f2f2f2 0.25em;/*bordure grise circulaire*/
+  border-radius: 50%;
+  color: #5cadd3;
+  padding: 1.2em;
+}
+
+#serviceslist li {
+  font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+  padding-left: 4em;
+  margin: 2em;
+}
+
+.listicones .fa-circle {
+  position: absolute; /*par rapport à fa-li qui est nativement en absolute */
+  right: -0.9em;
+  top: 2em;
+  border: white 0.5em solid;
+  border-radius: 50%;
+}
+
+h3 {
+  font-family: 'robotoblack', Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+  font-weight: normal;
+  margin: auto;
+}
+
+@media all and (min-width: 701px) and (max-width: 1200px) /*propriétés responsive*/
+{
+  #services p {
+    padding: 0 1em;
+    margin: 0 5em;
+  }
+  #serviceslist {
+    padding: 1em;
+  }
+  #mockup img {
+    width: 130%;
+  }
+}
+
+@media all and (max-width: 700px)
+{
+    #services p {
+    padding: 1em;
+    margin: auto;
+  }
+  #services {
+    height: auto;
+    margin: 0;
+  }
+
+  #puceservices {
+    width: 25%;/*augmentation de la taille pour bordure grise plus visible*/
+      }
+  #containerservices {
+    display: inline-block;/*pour chrome*/
+    text-align: center;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+  }
+  #mockup img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #mockup {
+    width: 100%;
+  }
+
+  .fa-li {
+    margin-top: 1.5em;
+
+}
+  #serviceslist {
+    width: 100%;
+    padding: 0.2em;
+    margin: -0.5em;/*enlève le décalage de gauche qui reste ( d'où vient-il? probablement d'un affichage par défaut du navigateur?)*/
+  }
+
+  #serviceslist li {
+    margin: 4em;
+  }
+
+  h3 {
+    margin: auto;
+  }
+}
+
+/*---------------------------section portfolio---------------------------------------*/
+#portfolio {
+  text-align: center;
+  background-color: #fafafa;/*fond gris à la section*/
+  padding: 2em 0;
+}
+#portfolio>p {
+font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+font-size: 0.8em;
+margin: 0 1em 2em 1em;
+}
+#puceprojets i {
+  color: #5cadd3;
+  border: solid 0.5em white;
+  border-radius: 50%;
+  position : relative;
+  top: -1em;
+}
+#puceprojets {
+  border-top: #f2f2f2 solid 0.2em;
+  width: 10%;
+  margin: auto;
+}
+
+#menu_projets {
+  display: inline-flex; /*centre l'element en combinaison avec le "text-align: center" du parent*/
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  list-style-type: none;
+  padding-bottom: 1.5em;
+}
+
+#menu_projets ul {
+  text-align: center;
+}
+
+#menu_projets .triangle {
+  background-color : #d8d8d8;/*fond bleu clair*/
+  padding: 0.8em;
+  position: relative;/*pour positionner les triangles en absolute*/
+}
+
+#menu_projets .triangle:hover::after {
+   content:"";
+   position: absolute;
+   top: 100%;
+   left: 40%;
+   width: 0;
+   height: 0;
+   border-left: 0.5em solid transparent;
+   border-right: 0.5em solid transparent;
+   border-top: 0.5em solid #4494bb;
+}
+
+#menu_projets .triangle:hover {
+  background-color : #5cadd3;/*bleu devient plus foné*/
+  color: white;
+  box-shadow: 0px -3px 0px #4494bb inset;
+  -moz-box-shadow: 0px -3px 0px #4494bb inset;
+  -webkit-box-shadow: 0px -3px 0px #4494bb inset;
+}
+
+#menu_projets .triangle:first-child {
+  border-radius: 4px 0 0 4px;
+  background-color : #5cadd3;
+  color: white;
+  box-shadow: 0px -3px 0px #4494bb inset;
+  -moz-box-shadow: 0px -3px 0px #4494bb inset;
+  -webkit-box-shadow: 0px -3px 0px #4494bb inset;
+  position: relative;
+}
+
+#menu_projets .triangle:first-child::after {
+   content:"";
+   position: absolute;
+   top: 100%;
+   left: 40%;
+   width: 0;
+   height: 0;
+   border-left: 0.5em solid transparent;
+   border-right: 0.5em solid transparent;
+   border-top: 0.5em solid #4494bb;
+}
+
+#menu_projets .triangle:last-child {
+  border-radius: 0 4px 4px 0;
+}
+/*------------------------------------------------------------------------------------------------*/
+#ensembleportfolio {
+  width : 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.imgportfolio > img {
+  width: 100%;
+}
+
+#ensembleportfolio > figure {
+  width: 21%;
+  margin: 1em;
+  position: relative;
+  overflow: hidden;
+}
+
+@-webkit-keyframes animationportfolio {
+    0% {
+        background: transparent;
+    }
+
+    50% {
+        background: rgba(0,0,0,0.7);
+    }
+
+    100% {
+        background: rgba(0,0,0,0.5);
+    }
+
+}
+@keyframes animationportfolio {
+    0% {
+        background: transparent;
+    }
+
+    50% {
+        background: rgba(0,0,0,0.7);
+    }
+
+    100% {
+        background: rgba(0,0,0,0.5);
+    }
+}
+
+.imgportfolio > figcaption {
+  display: none;
+  position:absolute;
+	left:0; right:0; bottom:0.36em;
+	padding: 0.5em;
+	margin:0;
+	text-align:left;
+  color: white;
+  width: 100%;
+  height: 32%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+}
+
+.imgportfolio:hover figcaption {
+  display: block;
+  -webkit-animation: animationportfolio 1s ease-in forwards;/*accélère vers la fin + reste à l'état final*/
+  animation: animationportfolio 1s ease-in forwards;
+}
+
+h4 {
+  font-size: 1em;
+  margin-bottom: -0.9em;
+  margin-top: auto;
+}
+
+h4 a {
+  text-decoration: none;
+  color:white;
+}
+
+em {
+  margin: 1em 0;
+}
+
+.imgportfolio>figure>figcaption>p {
+  margin: 0.5em 0;
+}
+
+.yeux .fas {
+  position:absolute;
+  right: 0.8em;
+  top: -1.2em;
+  border: white solid 0.16em;
+  border-radius: 50%;
+  background-color: #5cadd3;
+  padding: 0.6em 0.55em;
+}
+.imgportfolio > figcaption:hover {
+  visibility: visible;/*visibilité au survol de la figcaption en plus du survol de l'img*/
+}
+
+@media all and (min-width: 571px) and (max-width: 1000px)
+{
+  #menu_projets {
+    margin-bottom: 2em;
+  }
+  #menu_projets ul {
+    text-align: center;
+  }
+  #menu_projets li {
+    background-color : #d8d8d8;
+    padding: 1em;
+    font-size: 0.8em;
+  }
+  #ensembleportfolio > figure {
+    width: 41%;/*passe à 2 images*/
+  }
+  .imgportfolio>figcaption {
+    font-size: 1em;
+    bottom: 0.3em;
+  }
+}
+
+@media all and (min-width: 571px) and (max-width: 700px)
+{
+  h4 {
+    margin-top: -0.5em;/*sinon, disapraissait en bas*/
+  }
+}
+
+@media all and (max-width: 570px)
+{
+  #puceprojets {
+    width: 25%;
+  }
+  #menu_projets {
+    margin-bottom: 2em;
+  }
+  #menu_projets ul {
+    text-align: center;
+  }
+  #menu_projets li {
+    background-color : #d8d8d8;
+    padding: 1em;
+    font-size: 0.8em;
+  }
+  #ensembleportfolio { /*avant, c'était que le #rows en flex*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+        -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  #ensembleportfolio > figure {
+    width: 90%;/*portfolio s'étire sur une colonne*/
+  }
+  .imgportfolio>figcaption {
+    bottom: 0.3em;
+  }
+}
+
+@media all and (min-width: 360px) and (max-width: 570px)
+{
+  .imgportfolio>figcaption {
+    font-size: 1.2em;
+  }
+}
+/*-------------------------------section contact------------------------------*/
+#contact {
+  position: relative;/*pour positionner le #bloccontact*/
+  width: 100%;
+}
+
+#map { /*filtre bleu*/
+  background-color: #5cadd3;
+  height: 450px;
+}
+
+#map>iframe {
+  border: none;
+  opacity: 0.8;
+  width: 100%;
+}
+
+#bloccontact {
+ background-color: #ffffff;/*blanc*/
+ opacity: 0.9;
+ border-style: none;
+ position: absolute;
+ left: 70%;
+ top: 2em;
+ padding: 1em 2em;
+ color: #434951;
+ font-size: 0.8em;
+}
+
+#bloccontact h2 {
+  color: #272727;
+  font-size: 1.3em;
+}
+
+#societecontact {
+  font-family:'robotobold', Arial, helvetica, sans-serif;
+  font-size: 1em;
+}
+
+#nom,#email,#objet, #message {
+  width : 90%;
+  margin-bottom: 10px;
+}
+
+#tel { /*soulignement en pointillés du tel:*/
+  border-bottom: dotted 1px ;
+}
+
+#envoi {
+  background-color: #5cadd3;
+  color: white;
+  font-size: 1em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin-top: 0.3em;
+}
+
+input[type=text],input[type=email], textarea[name=message] {
+ padding-left: 10px;
+ color: #585858;
+ font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+ font-size: 0.8em;
+ }
+
+input[type=submit] {
+    width:110px;
+    color: #bdbdbd;
+    line-height: 20px;
+    border-radius: 2px;
+    border-width: 0;
+    box-shadow:0px 3px 0px #4494bb;
+    -webkit-box-shadow:0px 3px 0px #4494bb;
+    cursor:pointer;
+    font-family: 'robotomedium';/* n'était pas pris en compte comme ds body*/
+ }
+
+ @media all and (max-width: 1000px)
+ {
+   #bloccontact {
+     left: 50%;
+   }
+ }
+
+ @media all and (max-width: 500px) /*propriétés pour mobiles de la section contact*/
+ {
+   #contact {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: reverse;
+     -ms-flex-direction: column-reverse;
+     flex-direction: column-reverse;
+   }
+
+   #bloccontact {
+     position: static; /*annule la position absolute*/
+   }
+
+   #envoi {
+     text-align: center;
+   }
+ }
